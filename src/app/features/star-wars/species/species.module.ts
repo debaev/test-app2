@@ -8,7 +8,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [SpeciesPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
