@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { TitleStrategy, RouterStateSnapshot } from '@angular/router';
+import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class TitleService extends TitleStrategy {
 
   override updateTitle(routerState: RouterStateSnapshot) {
     const title = this.buildTitle(routerState);
-    if (title !== undefined) {
-      this.title.setTitle(title);
-    }
+
+    if (routerState.url === '/') this.title.setTitle('Test-app');
+    if (title !== undefined) this.title.setTitle(`Test-app - ${title}`);
   }
 }
