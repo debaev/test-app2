@@ -1,22 +1,17 @@
-.container {
-  width: 1200px;
-  margin: 0 auto;
+nav {
+  background: #000;
+  /* Disable Text Selection */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 
-  & nav {
-    width: 100%;
-    margin-left: auto;
+  & .nav-links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
-
-    /* Disable Text Selection */
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10 and IE 11 */
-    user-select: none;
-    /* Standard syntax */
   }
 
   & ul {
