@@ -11,9 +11,7 @@ export class CharactersService {
 
   constructor(private http: HttpClient) { }
   
-  getCharacters(): Observable<CharactersResult[]> {
-    return this.http.get<CharactersResponse>(`${BASE_API}/people/`).pipe(
-      map(data => data.results)
-    );
+  getCharacters(): Observable<CharactersResponse> {
+    return this.http.get<CharactersResponse>(`${BASE_API}/people/`);
   }
 }

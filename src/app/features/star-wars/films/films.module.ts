@@ -8,7 +8,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [FilmsPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

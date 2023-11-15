@@ -5,10 +5,16 @@ import { fetchCharactersSuccess } from "./characters.action";
 export const charactersFeatureKey = 'charactersStore';
 
 export interface CharactersState {
+  count: number, 
+  next: string | null, 
+  previous: string | null, 
   characters: CharactersResult[];
 }
 
 export const initialCharactersState: CharactersState = {
+  count: 0, 
+  next: null, 
+  previous: null, 
   characters: []
 };
 
@@ -17,6 +23,9 @@ export const charactersReducer = createReducer(
 
   on(fetchCharactersSuccess, (state, { characters }) => ({
     ...state,
-    characters: characters
+    count: characters.count, 
+    next: characters.next, 
+    previous: characters.previous, 
+    characters: characters.results
   })),
 );

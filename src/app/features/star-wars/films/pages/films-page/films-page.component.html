@@ -1,1 +1,1 @@
-<p>films-page works!</p>
+<p *ngIf="filmsStateFacade.films$ | async as films">{{films}}!</p>

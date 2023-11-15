@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { FilmsStateFacade } from '../../store/films.facade';
 
 @Component({
   selector: 'app-films-page',
@@ -7,5 +7,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./films-page.component.scss']
 })
 export class FilmsPageComponent {
+  constructor(public filmsStateFacade: FilmsStateFacade) {}
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.filmsStateFacade.fetchFilms()
+  }
 
 }

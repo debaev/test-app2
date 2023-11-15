@@ -10,7 +10,6 @@ export class CharactersEffects {
   constructor(
     private actions$: Actions,
     private charactersService: CharactersService,
-    private router: Router,
   ) { }
   
   fetchCharacters$ = createEffect(() => this.actions$.pipe(
