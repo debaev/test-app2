@@ -1,1 +1,1 @@
-<p>vehicles-page works!</p>
+<p *ngIf="(vehicleFacade.vehicles$) | async as species">{{species}}!</p>

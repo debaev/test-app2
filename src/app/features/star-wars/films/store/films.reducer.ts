@@ -5,10 +5,16 @@ import { fetchFilmsSuccess } from "./films.action";
 export const filmsFeatureKey = 'filmsStore';
 
 export interface FilmsState {
+  count: number,
+  next: string | null,
+  previous: string | null,
   films: FilmsResult[];
 }
 
 export const initialFilmsState: FilmsState = {
+  count: 0,
+  next: null,
+  previous: null,
   films: []
 };
 
@@ -17,6 +23,9 @@ export const filmsReducer = createReducer(
 
   on(fetchFilmsSuccess, (state, { films }) => ({
     ...state,
-    films: films
+    count: films.count,
+    next: films.next,
+    previous: films.previous,
+    films: films.results
   })),
 );

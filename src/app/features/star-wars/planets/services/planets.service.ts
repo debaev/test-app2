@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BASE_API } from 'src/app/constants';
-import { PlanetsResponse, PlanetsResult } from '../models/planets.model';
+import { PlanetsResponse } from '../models/planets.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,8 @@ import { PlanetsResponse, PlanetsResult } from '../models/planets.model';
 export class PlanetsService {
 
   constructor(private http: HttpClient) { }
-  
-  getPlanets(): Observable<PlanetsResult[]> {
-    return this.http.get<PlanetsResponse>(`${BASE_API}/planets/`).pipe(
-      map(data => data.results)
-    );
+
+  getPlanets(): Observable<PlanetsResponse> {
+    return this.http.get<PlanetsResponse>(`${BASE_API}/planets/`);
   }
 }

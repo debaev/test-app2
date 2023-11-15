@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { map, catchError, of, switchMap } from "rxjs";
-import { fetchFilms, fetchFilmsFail, fetchFilmsSuccess } from "./films.action";
+import { catchError, map, of, switchMap } from "rxjs";
 import { FilmsService } from "../services/films.service";
+import { fetchFilms, fetchFilmsFail, fetchFilmsSuccess } from "./films.action";
 
 @Injectable()
 export class FilmsEffects {
@@ -12,7 +11,7 @@ export class FilmsEffects {
     private filmsService: FilmsService,
 
   ) { }
-  
+
   fetchCharacters$ = createEffect(() => this.actions$.pipe(
     ofType(fetchFilms),
     switchMap(() => {

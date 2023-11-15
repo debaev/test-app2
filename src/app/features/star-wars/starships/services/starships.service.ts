@@ -2,16 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BASE_API } from 'src/app/constants';
-import { FilmsResponse } from '../models/films.model';
+import { StarshipsResponse } from '../models/starships.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FilmsService {
+export class StarshipsService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<FilmsResponse> {
-    return this.http.get<FilmsResponse>(`${BASE_API}/films/`);
+  getStarships(): Observable<StarshipsResponse> {
+    return this.http.get<StarshipsResponse>(`${BASE_API}/starships/`);
   }
 }

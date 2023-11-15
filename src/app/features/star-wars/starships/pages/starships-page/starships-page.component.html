@@ -1,1 +1,1 @@
-<p>starships-page works!</p>
+<p *ngIf="(starshipsFacade.starships$) | async as species">{{species}}!</p>

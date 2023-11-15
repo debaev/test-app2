@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { map, catchError, of, switchMap } from "rxjs";
-import { fetchPlanets, fetchPlanetsFail, fetchPlanetsSuccess } from "./planets.action";
+import { catchError, map, of, switchMap } from "rxjs";
 import { PlanetsService } from "../services/planets.service";
+import { fetchPlanets, fetchPlanetsFail, fetchPlanetsSuccess } from "./planets.action";
 
 @Injectable()
 export class PlanetsEffects {
@@ -11,8 +11,8 @@ export class PlanetsEffects {
     private planetsService: PlanetsService,
 
   ) { }
-  
-  fetchCharacters$ = createEffect(() => this.actions$.pipe(
+
+  fetchPlanets$ = createEffect(() => this.actions$.pipe(
     ofType(fetchPlanets),
     switchMap(() => {
       return this.planetsService.getPlanets().pipe(
