@@ -11,6 +11,9 @@ import { StarshipsState, starshipsFeatureKey, starshipsReducer } from '../featur
 import { VehiclesEffects } from '../features/star-wars/vehicles/store/vehicles.effects';
 import { VehiclesState, vehiclesFeatureKey, vehiclesReducer } from '../features/star-wars/vehicles/store/vehicles.reducer';
 import { PlanetsState, planetsFeatureKey, planetsReducer } from './../features/star-wars/planets/store/planets.reducer';
+import { LoadingState, loadinFeatureKey, loadingReducer } from './index.reducer';
+
+
 
 
 export interface State {
@@ -20,6 +23,7 @@ export interface State {
     [speciesFeatureKey]: SpeciesState,
     [starshipsFeatureKey]: StarshipsState,
     [vehiclesFeatureKey]: VehiclesState,
+    [loadinFeatureKey]: LoadingState,
 }
 
 export const reducers: ActionReducerMap<State> = {
@@ -29,6 +33,7 @@ export const reducers: ActionReducerMap<State> = {
     [speciesFeatureKey]: speciesReducer,
     [starshipsFeatureKey]: starshipsReducer,
     [vehiclesFeatureKey]: vehiclesReducer,
+    [loadinFeatureKey]: loadingReducer,
 };
 
 export const effects = [

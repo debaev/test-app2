@@ -13,3 +13,6 @@
 </nav>
 <router-outlet/>
 
+<div class="spinner-bg">
+  <app-spinner *ngIf="loadingFacade.loading$ | async"></app-spinner>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingStateFacade } from './store/index.facade';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(public loadingFacade: LoadingStateFacade) {}
   title = 'test-app2';
 }

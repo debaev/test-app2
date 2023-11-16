@@ -10,10 +10,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { effects, reducers } from './store';
 import { HttpClientModule } from '@angular/common/http';
 import { TitleService } from './shared/services/title-service.service';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
