@@ -11,7 +11,7 @@ export class StarshipsStateFacade {
 
   public starships$ = this.store.pipe(select(starships$));
 
-  fetchstarships(): void {
-    this.store.dispatch(fetchStarships());
+  fetchstarships(pageNum: number): void {
+    this.store.dispatch(fetchStarships({pageNum}));
   }
 }

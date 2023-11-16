@@ -1,1 +1,9 @@
-<p *ngIf="(planetsStateFacade.planets$ | async) as planets">{{planets}}!</p>
+<ng-container *ngIf="planetsStateFacade.planets$ | async as planets">
+  <div class="container cards-wrapper">
+    <app-planets *ngFor="let planet of planets.planets" [planet]="planet"></app-planets>
+  </div>
+  <div class="btns">
+    <button *ngIf="planets.previous" class="next" (click)="onPageChange(planets.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="planets.next" class="next" (click)="onPageChange(planets.next)">NEXT</button>
+  </div>
+</ng-container>

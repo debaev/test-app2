@@ -11,7 +11,7 @@ export class VehiclesStateFacade {
 
   public vehicles$ = this.store.pipe(select(vehicles$));
 
-  fetchVehicles(): void {
-    this.store.dispatch(fetchVehicles());
+  fetchVehicles(pageNum: number): void {
+    this.store.dispatch(fetchVehicles({pageNum}));
   }
 }

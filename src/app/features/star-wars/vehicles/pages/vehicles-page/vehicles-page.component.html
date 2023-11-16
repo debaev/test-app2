@@ -1,1 +1,9 @@
-<p *ngIf="(vehicleFacade.vehicles$) | async as species">{{species}}!</p>
+<ng-container *ngIf="vehicleFacade.vehicles$ | async as vehicles">
+  <div class="container cards-wrapper">
+    <app-vehicles-card *ngFor="let vehicle of vehicles.vehicles" [vehicle]="vehicle"></app-vehicles-card>
+  </div>
+  <div class="btns">
+    <button *ngIf="vehicles.previous" class="next" (click)="onPageChange(vehicles.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="vehicles.next" class="next" (click)="onPageChange(vehicles.next)">NEXT</button>
+  </div>
+</ng-container>

@@ -1,0 +1,64 @@
+
+:host {
+  width: 48%;
+}
+
+.card {
+  background: #001111d3;
+  color: #fff;
+  padding: 20px 40px;
+  font-family: 'Lexend', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+
+  & .main-info {
+    width: 40%;
+
+    & .title {
+      margin-bottom: 25px;
+    }
+
+    & .about {
+      padding: 10px;
+      background: #5a5a5a69;
+      font-size: 10px;
+    }
+  }
+
+  & .additional-info {
+    width: 25%;
+
+    & .participants-info {
+      display: flex;
+      margin-bottom: 20px;
+
+      & p {
+        font-size: 10px;
+        color: #fff;
+        opacity: .5;
+      }
+
+      & h5 {
+        font-size: 11px;
+        color: #fff;
+      }
+    }
+
+    &.info {
+      display: flex;
+      width: 100%;
+    }
+
+    & span {
+      display: inline-block;
+      width: 46%;
+      padding: 15px;
+      background: #5a5a5a69;
+
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}

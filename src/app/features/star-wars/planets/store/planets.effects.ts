@@ -14,8 +14,8 @@ export class PlanetsEffects {
 
   fetchPlanets$ = createEffect(() => this.actions$.pipe(
     ofType(fetchPlanets),
-    switchMap(() => {
-      return this.planetsService.getPlanets().pipe(
+    switchMap(({pageNum}) => {
+      return this.planetsService.getPlanets(pageNum).pipe(
         map((planets) => {
           return fetchPlanetsSuccess({ planets });
         },

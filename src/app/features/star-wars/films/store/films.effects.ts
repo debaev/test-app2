@@ -14,8 +14,8 @@ export class FilmsEffects {
 
   fetchCharacters$ = createEffect(() => this.actions$.pipe(
     ofType(fetchFilms),
-    switchMap(() => {
-      return this.filmsService.getCharacters().pipe(
+    switchMap(({pageNum}) => {
+      return this.filmsService.getFilms(pageNum).pipe(
         map((films) => {
           return fetchFilmsSuccess({ films });
         },

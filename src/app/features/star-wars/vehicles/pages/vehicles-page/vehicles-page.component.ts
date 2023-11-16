@@ -11,6 +11,11 @@ export class VehiclesPageComponent implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.vehicleFacade.fetchVehicles()
+    this.vehicleFacade.fetchVehicles(1)
+  }
+    
+  onPageChange(path: string) {
+    const pageNum = path[path.length - 1];
+    this.vehicleFacade.fetchVehicles(+pageNum);
   }
 }

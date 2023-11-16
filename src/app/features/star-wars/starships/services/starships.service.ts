@@ -11,7 +11,11 @@ export class StarshipsService {
 
   constructor(private http: HttpClient) { }
 
-  getStarships(): Observable<StarshipsResponse> {
-    return this.http.get<StarshipsResponse>(`${BASE_API}/starships/`);
+  getStarships(pageNum: number): Observable<StarshipsResponse> {
+    return this.http.get<StarshipsResponse>(`${BASE_API}/starships/`, {
+      params: {
+        page: pageNum ? pageNum : 1
+      }
+    });
   }
 }

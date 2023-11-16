@@ -1,1 +1,9 @@
-<p *ngIf="charactersFacade.characters$ | async as char">{{char}}!</p>
+<ng-container *ngIf="charactersFacade.characters$ | async as chars">
+  <div class="container cards-wrapper">
+    <app-character-card *ngFor="let char of chars.characters" [character]="char"></app-character-card>
+  </div>
+  <div class="btns">
+    <button *ngIf="chars.previous" class="next" (click)="onPageChange(chars.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="chars.next" class="next" (click)="onPageChange(chars.next)">NEXT</button>
+  </div>
+</ng-container>

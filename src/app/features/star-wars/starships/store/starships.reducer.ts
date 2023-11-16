@@ -8,14 +8,14 @@ export interface StarshipsState {
   count: number,
   next: string | null,
   previous: string | null,
-  Starships: StarshipsResult[];
+  starships: StarshipsResult[];
 }
 
 export const initialStarshipsState: StarshipsState = {
   count: 0,
   next: null,
   previous: null,
-  Starships: []
+  starships: []
 };
 
 export const starshipsReducer = createReducer(

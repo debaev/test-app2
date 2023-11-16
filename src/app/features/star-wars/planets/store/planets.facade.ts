@@ -11,7 +11,7 @@ export class PlanetsStateFacade {
 
   public planets$ = this.store.pipe(select(planets$));
 
-  fetchPlanets(): void {
-    this.store.dispatch(fetchPlanets());
+  fetchPlanets(pageNum: number): void {
+    this.store.dispatch(fetchPlanets({ pageNum }));
   }
 }

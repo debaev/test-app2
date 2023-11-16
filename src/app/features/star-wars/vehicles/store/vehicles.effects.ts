@@ -13,8 +13,8 @@ export class VehiclesEffects {
 
   fetchVehicles$ = createEffect(() => this.actions$.pipe(
     ofType(fetchVehicles),
-    switchMap(() => {
-      return this.vehiclesService.getVehicles().pipe(
+    switchMap(({pageNum}) => {
+      return this.vehiclesService.getVehicles(pageNum).pipe(
         map((vehicles) => {
           return fetchVehiclesSuccess({ vehicles });
         },

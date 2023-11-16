@@ -11,7 +11,11 @@ export class SpeciesService {
 
   constructor(private http: HttpClient) { }
 
-  getSpecies(): Observable<SpeciesResponse> {
-    return this.http.get<SpeciesResponse>(`${BASE_API}/species/`);
+  getSpecies(pageNum: number): Observable<SpeciesResponse> {
+    return this.http.get<SpeciesResponse>(`${BASE_API}/species/`, {
+      params: {
+        page: pageNum ? pageNum : 1
+      }
+    });
   }
 }

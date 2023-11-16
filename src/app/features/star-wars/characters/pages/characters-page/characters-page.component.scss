@@ -1,7 +1,26 @@
 :host {
   display: block;
-  height: calc(100vh - 71px);
-  background: url('../../../../../../assets/bg_images/bg_img1.png');
-  background-size: cover;
+  min-height: calc(100vh - 71px);
+  background-image: url('../../../../../../assets/bg_images/bg_img1.png');
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  & button {
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border: none;
+  }
 }

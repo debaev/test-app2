@@ -1,1 +1,9 @@
-<p *ngIf="(speciesStateFacade.species$) | async as species">{{species}}!</p>
+<ng-container *ngIf="speciesStateFacade.species$ | async as speciess">
+  <div class="container cards-wrapper">
+    <app-species-card *ngFor="let species of speciess.species" [species]="species"></app-species-card>
+  </div>
+  <div class="btns">
+    <button *ngIf="speciess.previous" class="next" (click)="onPageChange(speciess.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="speciess.next" class="next" (click)="onPageChange(speciess.next)">NEXT</button>
+  </div>
+</ng-container>

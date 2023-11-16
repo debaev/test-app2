@@ -13,8 +13,8 @@ export class StarshipsEffects {
 
   fetchStarships$ = createEffect(() => this.actions$.pipe(
     ofType(fetchStarships),
-    switchMap(() => {
-      return this.starshipsService.getStarships().pipe(
+    switchMap(({pageNum}) => {
+      return this.starshipsService.getStarships(pageNum).pipe(
         map((starships) => {
           return fetchStarshipsSuccess({ starships });
         },

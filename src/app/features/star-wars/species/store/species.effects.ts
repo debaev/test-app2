@@ -14,8 +14,8 @@ export class SpeciesEffects {
 
   fetchSpecies$ = createEffect(() => this.actions$.pipe(
     ofType(fetchSpecies),
-    switchMap(() => {
-      return this.speciesService.getSpecies().pipe(
+    switchMap(({pageNum}) => {
+      return this.speciesService.getSpecies(pageNum).pipe(
         map((species) => {
           return fetchSpeciesSuccess({ species });
         },

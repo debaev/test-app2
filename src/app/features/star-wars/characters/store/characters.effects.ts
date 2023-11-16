@@ -13,8 +13,8 @@ export class CharactersEffects {
 
   fetchCharacters$ = createEffect(() => this.actions$.pipe(
     ofType(fetchCharacters),
-    switchMap(() => {
-      return this.charactersService.getCharacters().pipe(
+    switchMap(({pageNum}) => {
+      return this.charactersService.getCharacters(pageNum).pipe(
         map((characters) => {
           return fetchCharactersSuccess({ characters });
         },

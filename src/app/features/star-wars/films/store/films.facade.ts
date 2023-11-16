@@ -11,7 +11,7 @@ export class FilmsStateFacade {
 
   public films$ = this.store.pipe(select(films$));
 
-  fetchFilms(): void {
-    this.store.dispatch(fetchFilms());
+  fetchFilms(pageNum: number): void {
+    this.store.dispatch(fetchFilms({ pageNum }));
   }
 }

@@ -11,7 +11,7 @@ export class SpeciesStateFacade {
 
   public species$ = this.store.pipe(select(species$));
 
-  fetchSpecies(): void {
-    this.store.dispatch(fetchSpecies());
+  fetchSpecies(pageNum: number): void {
+    this.store.dispatch(fetchSpecies({pageNum}));
   }
 }

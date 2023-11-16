@@ -11,7 +11,7 @@ export class CharactersStateFacade {
 
   public characters$ = this.store.pipe(select(characters$));
 
-  fetchCharacters(): void {
-    this.store.dispatch(fetchCharacters());
+  fetchCharacters(pageNum: number): void {
+    this.store.dispatch(fetchCharacters({ pageNum }));
   }
 }

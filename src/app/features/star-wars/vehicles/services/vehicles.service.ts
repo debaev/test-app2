@@ -11,7 +11,11 @@ export class VehiclesService {
 
   constructor(private http: HttpClient) { }
 
-  getVehicles(): Observable<VehiclesResponse> {
-    return this.http.get<VehiclesResponse>(`${BASE_API}/vehicles/`);
+  getVehicles(pageNum: number): Observable<VehiclesResponse> {
+    return this.http.get<VehiclesResponse>(`${BASE_API}/vehicles/`, {
+      params: {
+        page: pageNum ? pageNum : 1
+      }
+    });
   }
 }

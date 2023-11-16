@@ -11,7 +11,11 @@ export class FilmsService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<FilmsResponse> {
-    return this.http.get<FilmsResponse>(`${BASE_API}/films/`);
+  getFilms(pageNum: number): Observable<FilmsResponse> {
+    return this.http.get<FilmsResponse>(`${BASE_API}/films/`,{
+      params: {
+        page: pageNum ? pageNum : 1
+      }
+    });
   }
 }

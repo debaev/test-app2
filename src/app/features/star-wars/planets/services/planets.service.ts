@@ -11,7 +11,11 @@ export class PlanetsService {
 
   constructor(private http: HttpClient) { }
 
-  getPlanets(): Observable<PlanetsResponse> {
-    return this.http.get<PlanetsResponse>(`${BASE_API}/planets/`);
+  getPlanets(pageNum: number): Observable<PlanetsResponse> {
+    return this.http.get<PlanetsResponse>(`${BASE_API}/planets/`,{
+      params: {
+        page: pageNum ? pageNum : 1
+      }
+    });
   }
 }
