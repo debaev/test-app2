@@ -1,0 +1,40 @@
+nav {
+  background: #000;
+  /* Disable Text Selection */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+
+  & .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & ul {
+    display: flex;
+
+    & li {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+
+      & a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background: #ffffff1d;
+        transition: .3s;
+
+        &:hover {
+          background: #ffffff63;
+        }
+      }
+    }
+  }
+}

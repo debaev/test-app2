@@ -1,0 +1,18 @@
+<nav>
+    <div class="container nav-links">
+    <a routerLink='/'><img src="../assets/logo.svg" alt="logo"></a>
+    <ul>
+      <li><a routerLink='/films'>FILMS</a></li>
+      <li><a routerLink='/characters'>CHARACTERS</a></li>
+      <li><a routerLink='/species'>SPECIES</a></li>
+      <li><a routerLink='/planets'>PLANETS</a></li>
+      <li><a routerLink='/starships'>STARSHIPS</a></li>
+      <li><a routerLink='/vehicles'>VEHICLES</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet/>
+
+<div class="spinner-bg">
+  <app-spinner *ngIf="loadingFacade.loading$ | async"></app-spinner>
+</div>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="filmsStateFacade.films$ | async as filmes">
+  <div class="container cards-wrapper">
+    <app-films-card *ngFor="let film of filmes.films" [films]="film"></app-films-card>
+  </div>
+  <div class="btns">
+    <button *ngIf="filmes.previous" class="next" (click)="onPageChange(filmes.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="filmes.next" class="next" (click)="onPageChange(filmes.next)">NEXT</button>
+  </div>
+</ng-container>

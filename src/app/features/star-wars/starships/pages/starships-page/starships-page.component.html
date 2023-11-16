@@ -1,0 +1,9 @@
+<ng-container *ngIf="starshipsFacade.starships$ | async as starships">
+  <div class="container cards-wrapper">
+    <app-starships-card *ngFor="let starship of starships.starships" [starship]="starship"></app-starships-card>
+  </div>
+  <div class="btns">
+    <button *ngIf="starships.previous" class="next" (click)="onPageChange(starships.previous)" style="margin-right: 5px;">PREV</button>
+    <button *ngIf="starships.next" class="next" (click)="onPageChange(starships.next)">NEXT</button>
+  </div>
+</ng-container>
